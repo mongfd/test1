@@ -5,6 +5,14 @@ import (
 	"net/http"
 )
 
-func addRouter(router *gin.Engine)  {
-	router.Handle(http.MethodGet,"",test)
+type Router interface {
+	Add(*gin.Engine)
+}
+
+type Index struct {
+}
+
+func (i *Index) Add(router *gin.Engine) {
+	router.Handle(http.MethodGet, "")
+
 }

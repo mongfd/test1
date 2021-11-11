@@ -3,14 +3,11 @@ package router
 import (
 	"github.com/gin-gonic/gin"
 	"net/http"
+	"test1/router/index"
 )
 
-func init()  {
+func init() {
 
 	router := gin.New()
-
-}
-
-type addRouter interface {
-
+	index.Add(router)
 }
