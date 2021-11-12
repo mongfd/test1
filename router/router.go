@@ -2,12 +2,18 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
-	"net/http"
 	"test1/router/index"
 )
+
 
 func init() {
 
 	router := gin.New()
-	index.Add(router)
+	i := index.Index{}
+	i.Add(router)
+}
+
+
+type Router interface {
+	Add(*gin.Engine)
 }
